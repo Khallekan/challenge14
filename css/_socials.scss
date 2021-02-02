@@ -1,0 +1,10 @@
+.social-container {
+  svg {
+    fill: $white;
+  }
+  &:hover {
+    svg {
+      fill: $lime-green;
+    }
+  }
+}

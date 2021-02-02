@@ -2,7 +2,16 @@
 
 *,
 *::before,
-*::after,
-body {
+*::after {
   font-family: 'Public Sans', sans-serif;
+}
+
+@mixin font300 {
+  font-weight: 300;
+}
+@mixin font400 {
+  font-weight: 400;
+}
+@mixin font700 {
+  font-weight: 700;
 }

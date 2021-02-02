@@ -1,6 +1,9 @@
 @import './variables';
 @import './fonts';
-
+@import './utilities';
+@import './buttons';
+@import './socials';
+@import './mixins';
 *,
 *::after,
 *::before {
@@ -9,10 +12,258 @@
   padding: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+main {
+  .header {
+    background: $white;
+    display: flex;
+    @include padding;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    &-logo {
+      svg {
+        width: 100%;
+      }
+    }
+    &-nav {
+      height: 100%;
+      ul {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 5%;
+      }
+      .mobile-menu {
+        display: none;
+      }
+    }
+  }
+  .intro {
+    display: flex;
+    align-items: center;
+    background: $very-light-gray;
+    height: 40rem;
+    position: relative;
+    @include padding;
+    &-header {
+      @include font400;
+      font-size: 3.9vw;
+      color: $dark-blue;
+    }
+    &-text {
+      color: $grayish-blue;
+      font-size: 1.2vw;
+      line-height: 1.5em;
+    }
+    &-info {
+      flex: 0 0 35%;
+      z-index: 1;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 30px;
+    }
+    &-pic {
+      flex: 0 0 75%;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &::before {
+        background: url('../images/bg-intro-desktop.svg') no-repeat top 60%
+          right -100px / 110% 170%;
+      }
+      &::after {
+        height: 130%;
+        background: url('../images/image-mockups.png') no-repeat top 110% right -110px /
+          90% 110%;
+      }
+    }
+  }
+  .ads {
+    background-color: $light-grayish-blue;
+    @include padding;
+    padding-top: 10%;
+    padding-bottom: 8%;
+    &-header {
+      .question {
+        color: $dark-blue;
+        @include font400;
+        font-size: 3vw;
+      }
+      .answer {
+        font-size: 1.2vw;
+        line-height: 1.5em;
+        color: $grayish-blue;
+        margin-top: 2%;
+        width: 50%;
+      }
+    }
+    &-typ {
+      margin-top: 7%;
+      display: flex;
+      gap: 2%;
+      & > * {
+        flex: 0 0 1fr;
+      }
+      .ads-container {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 20px;
+        .container {
+          &-img {
+            width: 25%;
+          }
+          &-header {
+            color: $dark-blue;
+            @include font400;
+            font-size: 2vw;
+          }
+          &-txt {
+            color: $grayish-blue;
+            @include font300;
+            font-size: 1.195vw;
+          }
+        }
+      }
+    }
+  }
+  .article {
+    @include padding;
+    padding-top: 10%;
+    padding-bottom: 8%;
+    background: $very-light-gray;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 50px;
+
+    &-header {
+      @include font300;
+      color: $dark-blue;
+      font-size: 3.2vw;
+    }
+    .container {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 2%;
+      & > * {
+        flex: 0 0 1fr;
+      }
+      .article {
+        &-container {
+          height: 25rem;
+          background: $white;
+          overflow: hidden;
+          border-radius: 10px;
+        }
+        &-img {
+          height: 50%;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        &-desc {
+          display: flex;
+          flex-flow: column nowrap;
+          gap: 10px;
+          padding: 10% 5% 5%;
+          .author {
+            @include font700;
+            font-size: 0.9vw;
+            color: $grayish-blue;
+          }
+          .article-link {
+            @include font400;
+            color: $dark-blue;
+            font-size: 1.3vw;
+            &:hover {
+              color: $bright-cyan;
+            }
+          }
+          .article-txt {
+            @include font400;
+            color: $grayish-blue;
+            font-size: 1.15vw;
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    @include padding;
+    height: 10rem;
+    background: $dark-blue;
+    display: flex;
+    flex-flow: column wrap;
+    &-logo,
+    .socials,
+    &-btn,
+    .copyright {
+      flex: 0 0 50%;
+    }
+    &-nav {
+      flex: 0 0 100%;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    &-nav {
+      display: flex;
+      align-items: center;
+      color: $very-light-gray;
+
+      ul {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-flow: column wrap;
+        .footer-link {
+          flex: 0 0 33%;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .footer-link {
+        a:hover {
+          color: $lime-green;
+        }
+      }
+    }
+    .footer-btn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .copyright {
+      text-align: end;
+      color: $grayish-blue;
+      font-size: 1vw;
+    }
+  }
+}
 .attribution {
-  font-size: 11px;
+  background: $dark-blue;
+  font-size: 1vw;
+  color: $white;
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: $grayish-blue;
 }
