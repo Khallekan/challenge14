@@ -16,3 +16,11 @@
     );
   }
 }
+
+@media all and (max-width: 768px) {
+  .button {
+    width: 40vw;
+    height: 11vw;
+    font-size: 3.5vw;
+  }
+}

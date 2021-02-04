@@ -122,7 +122,10 @@ main {
         gap: 20px;
         .container {
           &-img {
-            width: 25%;
+            width: 100%;
+            img {
+              width: 40%;
+            }
           }
           &-header {
             color: $dark-blue;
@@ -267,3 +270,5 @@ main {
 .attribution a {
   color: $grayish-blue;
 }
+
+@import './mediaqueries';
