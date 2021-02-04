@@ -609,7 +609,7 @@ main .footer .copyright {
     height: 110vw;
   }
   main .article .container .article-img {
-    height: 60%;
+    height: 50%;
   }
   main .article .container .article-desc {
     text-align: left;
@@ -621,7 +621,7 @@ main .footer .copyright {
     font-size: 4.6vw;
   }
   main .article .container .article-desc .article-txt {
-    font-size: 3vw;
+    font-size: 3.8vw;
   }
   main .footer {
     -webkit-box-orient: vertical;
